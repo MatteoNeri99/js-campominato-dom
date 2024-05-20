@@ -19,26 +19,38 @@ function newGame (numeroCaselle, classe){
     
     
         divContainer.appendChild(articleEl);
+
     
     
         articleEl.addEventListener("click", function (){
     
             articleEl.innerHTML=index + 1;
-    
-            articleEl.classList.add("active");
+
+            const bombe=[];
+
+            bombaRandom(bombe, index + 1, numeroCaselle);
+
+            if(bombe.includes(articleEl.innerHTML=index + 1)  === true){
+
+                articleEl.classList.add("bomba");
+
+            }else{
+                articleEl.classList.add("active");
+
+            }
+
     
             console.log("casella numero: ", index + 1)
     
         });
     
+
     
         buttonPlay.addEventListener("click", function (){
     
             articleEl.innerHTML="";
     
             articleEl.classList.remove("active");
-
-            
     
         
         });
@@ -46,6 +58,7 @@ function newGame (numeroCaselle, classe){
     };
     
 }
+
 
 
 
@@ -79,3 +92,43 @@ buttonPlay.addEventListener("click" , function(){
     newGame(caselle, classeDifficolta)
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function numeroRandom (min, max){
+
+    return Math.floor(Math.random() * ((max + 1 ) - min)+ min);
+    
+}
+
+
+
+
+function bombaRandom (numeriUsciti, min, max){
+
+    while (numeriUsciti.length < 16){
+
+        let numero=(numeroRandom(min, max));
+
+        if (numeriUsciti.includes(numero) === false ){
+
+            numeriUsciti.push(numero);
+        }
+
+    }
+    
+}
+    
+
+

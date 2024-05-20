@@ -50,3 +50,7 @@ div.container{
 .display-inline-block{
     display: inline-block;
 }
+
+.bomba{
+    background-color: red;
+}
