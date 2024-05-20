@@ -8,29 +8,28 @@ function newGame (numeroCaselle, classe){
 
     divContainer.innerHTML="";
 
+    const bombe=[];
+
+    bombaRandom(bombe, 0, numeroCaselle);
+
     for (let index=0; index < numeroCaselle ; index++){
         
 
         let articleEl=document.createElement("article");
+
+        articleEl.innerHTML=index + 1;
     
         articleEl.classList.add(classe);
     
         articleEl.classList.add("display-inline-block")
-    
     
         divContainer.appendChild(articleEl);
 
     
     
         articleEl.addEventListener("click", function (){
-    
-            articleEl.innerHTML=index + 1;
 
-            const bombe=[];
-
-            bombaRandom(bombe, index + 1, numeroCaselle);
-
-            if(bombe.includes(articleEl.innerHTML=index + 1)  === true){
+            if(bombe.includes(parseInt(articleEl.innerHTML))  === true){
 
                 articleEl.classList.add("bomba");
 
@@ -105,6 +104,8 @@ buttonPlay.addEventListener("click" , function(){
 
 
 
+// funzione che crea numero random
+
 
 function numeroRandom (min, max){
 
@@ -114,12 +115,14 @@ function numeroRandom (min, max){
 
 
 
+// funzione che aggiunge 16 numeri random diversi e li aggiunge ad un array
 
-function bombaRandom (numeriUsciti, min, max){
+
+function bombaRandom (numeriUsciti, max){
 
     while (numeriUsciti.length < 16){
 
-        let numero=(numeroRandom(min, max));
+        let numero=(numeroRandom( 0 , max));
 
         if (numeriUsciti.includes(numero) === false ){
 
