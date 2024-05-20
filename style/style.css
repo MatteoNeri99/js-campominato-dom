@@ -9,11 +9,11 @@ div.container{
 }
 
 .medio{
-    width: calc(100% / 10 - 4px);
-    height: calc(100% / 10 - 4px);
+    width: calc(100% / 9 - 4px);
+    height: calc(100% / 9 - 4px);
     border: 2px solid black;
     text-align: center;
-    line-height: calc(800px / 10 - 4px);
+    line-height: calc(800px / 9 - 4px);
     display: none;
     
 }
@@ -23,7 +23,7 @@ div.container{
    
 }
 
-.facile{
+.difficile{
 
     width: calc(100% / 7 - 4px);
     height: calc(100% / 7 - 4px);
@@ -35,13 +35,13 @@ div.container{
     
 }
 
-.difficile{
+.facile{
 
-    width: calc(100% / 20 - 4px);
-    height: calc(100% / 20 - 4px);
+    width: calc(100% / 10 - 4px);
+    height: calc(100% / 10 - 4px);
     border: 2px solid black;
     text-align: center;
-    line-height: calc(800px / 20 - 4px);
+    line-height: calc(800px / 10 - 4px);
     display: none;
     
     

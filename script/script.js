@@ -3,56 +3,18 @@ const buttonPlay =document.querySelector("button.play");
 const divContainer=document.querySelector("main div.container");
 
 
-for (let index=0; index < 100 ; index++){
-        
+function newGame (numeroCaselle, classe){
 
-    let articleEl=document.createElement("article");
-
-    articleEl.classList.add("medio");
-
-    articleEl.classList.add("display-inline-block")
-
-
-    divContainer.appendChild(articleEl);
-
-
-    articleEl.addEventListener("click", function (){
-
-        articleEl.innerHTML=index + 1;
-
-        articleEl.classList.add("active");
-
-        console.log("casella numero: ", index + 1)
-
-    });
-
-
-    buttonPlay.addEventListener("click", function (){
-
-        articleEl.innerHTML="";
-
-        articleEl.classList.remove("active");
-
-    
-    });
-
-};
-
-
-
-const difficoltaMedio =document.querySelector("#medio")
-
-difficoltaMedio.addEventListener("click",function(){
 
     divContainer.innerHTML="";
 
-    for (let index=0; index < 100 ; index++){
+    for (let index=0; index < numeroCaselle ; index++){
         
 
         let articleEl=document.createElement("article");
-
-        articleEl.classList.add("medio");
-
+    
+        articleEl.classList.add(classe);
+    
         articleEl.classList.add("display-inline-block")
     
     
@@ -60,7 +22,7 @@ difficoltaMedio.addEventListener("click",function(){
     
     
         articleEl.addEventListener("click", function (){
-
+    
             articleEl.innerHTML=index + 1;
     
             articleEl.classList.add("active");
@@ -71,115 +33,49 @@ difficoltaMedio.addEventListener("click",function(){
     
     
         buttonPlay.addEventListener("click", function (){
-
+    
             articleEl.innerHTML="";
     
             articleEl.classList.remove("active");
 
+            
+    
         
         });
     
     };
+    
+}
+
+
+
+
+let difficoltaGame =document.querySelector("#livelli")
+
+
+buttonPlay.addEventListener("click" , function(){
+
+    let caselle;
+
+    let classeDifficolta;
+
+    switch (difficoltaGame.value){
+        case "0":
+            caselle= 100;
+            classeDifficolta="facile"
+            break;
+        case "1":
+            caselle= 81;
+            classeDifficolta="medio"
+            break;
+        case "2":
+            caselle= 49;
+            classeDifficolta="difficile"
+            break;
+        default:
+            caselle= 49;   
+    }
+  
+    newGame(caselle, classeDifficolta)
 
 });
-
-
-
-
-
-
-
-
-
-const difficoltaFacile =document.querySelector("#facile")
-
-difficoltaFacile.addEventListener("click",function(){
-
-    divContainer.innerHTML="";
-
-
-    for (let index=0; index < 49 ; index++){
-
-        let articleEl=document.createElement("article");
-
-        articleEl.classList.add("facile");
-
-        articleEl.classList.add("display-inline-block");
-    
-    
-        divContainer.appendChild(articleEl);
-    
-        
-    
-        articleEl.addEventListener("click", function (){
-
-            articleEl.innerHTML=index + 1;
-    
-            articleEl.classList.add("active");
-    
-            console.log("casella numero: ", index + 1)
-    
-        });
-    
-    
-        buttonPlay.addEventListener("click", function (){
-
-            articleEl.innerHTML="";
-    
-            articleEl.classList.remove("active");
-
-        
-        });
-    
-    };
-
-});
-
-
-
-
-
-
-
-const difficoltaDifficile =document.querySelector("#difficile")
-
-difficoltaDifficile.addEventListener("click",function(){
-
-    divContainer.innerHTML="";
-
-    for (let index=0; index < 400 ; index++){
-
-        let articleEl=document.createElement("article");
-
-        articleEl.classList.add("difficile");
-
-        articleEl.classList.add("display-inline-block")
-    
-    
-        divContainer.appendChild(articleEl);
-    
-       
-    
-        articleEl.addEventListener("click", function (){
-
-            articleEl.innerHTML=index + 1;
-    
-            articleEl.classList.add("active");
-    
-            console.log("casella numero: ", index + 1)
-    
-        });
-    
-    
-        buttonPlay.addEventListener("click", function (){
-
-            articleEl.innerHTML="";
-    
-            articleEl.classList.remove("active");
-        
-        });
-    
-    };
-
-});
-
