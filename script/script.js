@@ -23,27 +23,28 @@ function newGame (numeroCaselle, classe){
         articleEl.classList.add("display-inline-block")
     
         divContainer.appendChild(articleEl);
-
     
     
         articleEl.addEventListener("click", function (){
 
 
-            if(bombe.includes(parseInt(articleEl.innerHTML))  === true){
+            for (let i=0; i<bombe.length; i++){
 
-               articleEl.classList.add("bomba");  
-
-
-            }else{
-                
-                articleEl.classList.add("active")
+                console.log(parseInt(articleEl.value));
 
 
+
+                if(bombe.includes(index) ){
+
+                    articleEl.classList.add("bomba"); 
+                }else{
+            
+                    articleEl.classList.add("active");
+    
+                }
+        
             }
 
-    
-            console.log("casella numero: ", index + 1)
-    
         });
 
         buttonPlay.addEventListener("click", function (){
