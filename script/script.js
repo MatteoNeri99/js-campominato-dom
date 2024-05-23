@@ -10,10 +10,9 @@ function newGame (numeroCaselle, classe){
 
     const bombe=[];
 
-    bombaRandom(bombe, 0, numeroCaselle);
+    bombaRandom(bombe, numeroCaselle);
 
     for (let index=0; index < numeroCaselle ; index++){
-        
 
         let articleEl=document.createElement("article");
 
@@ -29,12 +28,16 @@ function newGame (numeroCaselle, classe){
     
         articleEl.addEventListener("click", function (){
 
+
             if(bombe.includes(parseInt(articleEl.innerHTML))  === true){
 
-                articleEl.classList.add("bomba");
+               articleEl.classList.add("bomba");  
+
 
             }else{
-                articleEl.classList.add("active");
+                
+                articleEl.classList.add("active")
+
 
             }
 
@@ -42,12 +45,8 @@ function newGame (numeroCaselle, classe){
             console.log("casella numero: ", index + 1)
     
         });
-    
 
-    
         buttonPlay.addEventListener("click", function (){
-    
-            articleEl.innerHTML="";
     
             articleEl.classList.remove("active");
     

@@ -14,14 +14,11 @@ div.container{
     border: 2px solid black;
     text-align: center;
     line-height: calc(800px / 9 - 4px);
-    display: none;
+    color: white;
     
 }
 
-.active{
-    background-color: aqua;
-   
-}
+
 
 .difficile{
 
@@ -30,7 +27,7 @@ div.container{
     border: 2px solid black;
     text-align: center;
     line-height: calc(800px / 7 - 4px);
-    display: none;
+    color: white;
    
     
 }
@@ -42,15 +39,18 @@ div.container{
     border: 2px solid black;
     text-align: center;
     line-height: calc(800px / 10 - 4px);
-    display: none;
+    color: white;
     
     
 }
 
-.display-inline-block{
-    display: inline-block;
+.active{
+    background-color: aqua;
+    color: black;
+
 }
 
 .bomba{
     background-color: red;
+    color: black;
 }
